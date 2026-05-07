@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpecView</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <a class= "logo" href="index.html">SpecView</a>
+        </div>
+        <div class="logo-sub">System Inspector</div>
+      </div>
+      <div class="status-dot" id="status-dot"></div>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- IDLE -->
+    <div id="idle-state" class="state active center">
+      <p class="idle-text">Ready to inspect your hardware.</p>
+      <button id="scan-btn" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Scan System
+      </button>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading-state" class="state center">
+      <div class="loader-ring"></div>
+      <p class="idle-text">Scanning hardware&hellip;</p>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="result-state" class="state">
+      <div id="specs-grid" class="specs-grid"></div>
+      <div class="rescan-row">
+        <button id="rescan-btn" class="btn-ghost">↺ Rescan</button>
+      </div>
+    </div>
+
+    <!-- ERROR -->
+    <div id="error-state" class="state center">
+      <div class="err-icon">!</div>
+      <p class="idle-text">Cannot reach the server.<br><span class="muted">Run <code>node server.js</code> first.</span></p>
+      <button id="retry-btn" class="btn-primary">Try Again</button>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
